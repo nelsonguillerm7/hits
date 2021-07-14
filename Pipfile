@@ -7,6 +7,9 @@ name = "pypi"
 django = "*"
 django-fsm = "*"
 django-widget-tweaks = "*"
+environs = "*"
+psycopg2-binary = "*"
+
 
 [dev-packages]
 

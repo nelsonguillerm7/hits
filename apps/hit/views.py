@@ -60,13 +60,13 @@ class HitsListView(HitsUrlsMixin, LoginRequiredMixin, BaseListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         user = self.request.user
+        opts = {}
+        if check_big_boss(user) or check_managers(user):
+            opts.update({"perm_create": True, "perm_bulk": True})
         if "site" in context:
-            if check_big_boss(user) or check_managers(user):
-                opts = {
-                    "perm_create": True,
-                    "perm_bulk": True,
-                }
-                context.get("site").update(opts)
+            context.get("site").update(opts)
+        else:
+            context["site"] = opts
         return context
 
 

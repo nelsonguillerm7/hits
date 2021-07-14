@@ -15,22 +15,22 @@
             {{ form.non_field_errors }}
             <div class="mb-3">
                 <div class="form-floating">
-                    <input type="email" class="form-control invalid" id="floatingInput"
-                           placeholder="name@example.com" name="username">
                     <label for="floatingInput">Email address</label>
                     {% if form.username.errors %}
                         <div class="invalid-feedback d-block">{{ form.username.errors }}</div>
                     {% endif %}
+                    <input type="email" class="form-control invalid" id="floatingInput"
+                           placeholder="name@example.com" name="username">
                 </div>
             </div>
             <div class="mb-3">
                 <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword"
-                           placeholder="Password" name="password">
                     <label for="floatingPassword">Password</label>
                     {% if form.password.errors %}
                         <div class="invalid-feedback d-block">{{ form.password.errors }}</div>
                     {% endif %}
+                    <input type="password" class="form-control" id="floatingPassword"
+                           placeholder="Password" name="password">
 
                 </div>
             </div>
