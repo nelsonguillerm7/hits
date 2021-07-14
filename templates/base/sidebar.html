@@ -1,0 +1,55 @@
+{% load static %}
+<!--begin::Aside-->
+<div class="aside aside-left  aside-fixed  d-flex flex-column flex-row-auto" id="kt_aside">
+    <!--begin::Brand-->
+    <div class="flex-column-auto brand mt-10" id="kt_brand">
+        <!--begin::Logo-->
+        <a href="/" class="brand-logo">
+            INTERNATIONAL SPY AGENCY
+        </a>
+        <!--end::Logo-->
+
+    </div>
+    <!--end::Brand-->
+
+    <!--begin::Aside Menu-->
+    <div class="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
+        <!--begin::Menu Container-->
+        <div id="kt_aside_menu" class="aside-menu mb-10" data-menu-vertical="1" data-menu-scroll="1"
+             data-menu-dropdown-timeout="500">
+            <!--begin::Menu Nav-->
+            <ul class="menu-nav">
+                <li class="menu-section">
+                    <h4 class="menu-text">MAIN</h4>
+                    <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
+                </li>
+                <li class="menu-item" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{% url 'auth:login' %}" class="menu-link menu-toggle">
+                        {% include 'svg/icon.html' %}
+                        <span class="menu-text">HOME</span>
+                    </a>
+                </li>
+                <li class="menu-section">
+                    <h4 class="menu-text">PAGES</h4>
+                    <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
+                </li>
+                <li class="menu-item" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{% url 'auth:hitman_list' %}" class="menu-link menu-toggle">
+                        {% include 'svg/icon.html' %}
+                        <span class="menu-text">HITMAN</span>
+                    </a>
+                </li>
+                <li class="menu-item" aria-haspopup="true" data-menu-toggle="hover">
+                    <a href="{% url 'hit:hits_list' %}" class="menu-link menu-toggle">
+                        {% include 'svg/icon.html' %}
+                        <span class="menu-text">HITS</span>
+                    </a>
+                </li>
+            </ul>
+            <!--end::Menu Nav-->
+        </div>
+        <!--end::Menu Container-->
+    </div>
+    <!--end::Aside Menu-->
+</div>
+<!--end::Aside-->

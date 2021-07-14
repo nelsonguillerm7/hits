@@ -1,0 +1,90 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+{% block css %}
+    {{ block.super }}
+    <link href="{% static 'assets/css/forms/validation.css' %}" rel="stylesheet"/>
+    <!--<link href="{% static 'assets/css/forms/validation.css' %}" rel="stylesheet" />-->
+{% endblock %}
+
+
+{% block content %}
+<div class="card card-custom card-sticky" id="kt_page_sticky_card">
+    <div class="card-header">
+        <div class="card-title">
+            <h3 class="card-label">
+                {{ site.title|capfirst }} <i class="mr-2"></i>
+            </h3>
+        </div>
+        <div class="card-toolbar">
+            {% if object and site.urls.delete %}
+                <a href="{{ site.urls.delete }}" class="btn btn-light-danger font-weight-bolder mr-2">
+                    <i class="fas fa-times icon-sm"></i>Eliminar
+                </a>
+            {% endif %}
+            <div class="btn-group">
+                <button type="submit" form="main-form" class="btn btn-primary font-weight-bolder">
+                    <i class="fas fa-check icon-sm"></i>Guardar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <form id="main-form" data-errors="{{ form.errors.as_json }}" action="" method="POST"
+                enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+
+            {% block form %}
+                {% include 'forms/form.html' with form=form %}
+            {% endblock %}
+
+            {% block extra_forms %}{% endblock %}
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block modals %}
+    <div class="insoles-forms">
+        <div class="modal fade text-left" id="insoles-forms" tabindex="3" role="dialog" aria-labelledby="modalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modalLabel">Crear nuevo </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="bx bx-x"></i>
+                        </button>
+                    </div>
+                    <form id="insoles-form" action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="modal-body">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                <i class="bx bx-x d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block">Cancelar</span>
+                            </button>
+                            <button type="submit" class="btn btn-primary ml-1">
+                                <i class="bx bx-check d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block">Crear</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'vendors/formset/jquery.formset.js' %}"></script>
+    <script src="{% static 'vendors/formset/formsets.init.js' %}"></script>
+    <script src="{% static 'assets/js/apps/insoles.js' %}"></script>
+    <script src="{% static 'assets/js/apps/indexing.js' %}"></script>
+    <script src="{% static 'assets/js/apps/taxpayers.js' %}"></script>
+
+{% endblock %}

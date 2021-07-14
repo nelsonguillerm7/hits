@@ -1,0 +1,16 @@
+table, th, td {
+    border: 1px solid #8d8c8c;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table.table-bordered-none, table.table-bordered-none th, table.table-bordered-none td {
+    border: none !important;
+}
+
+table.table-bordered-none td {
+    padding: 0 !important;
+    line-height: 1.15;
+}

@@ -1,0 +1,35 @@
+{% extends "base/base_list.html" %}
+
+{% block list_actions %}
+    {{ block.super }}
+
+
+{% endblock %}
+
+{% block actions %}
+    <div>
+        <a href="{% url 'hit:hits_detail' row.instance.pk %}"
+           class="btn btn-sm btn-clean btn-icon"
+           title="View detail">
+            <i class="fas fa-eye icon-md"></i>
+        </a>
+        {% if row.instance.state == 1 %}
+            <a href="{% url 'hit:hits_update' row.instance.pk %}"
+               class="btn btn-sm btn-clean btn-icon"
+               title="Editar detalles">
+                <i class="fas fa-pen icon-md"></i>
+            </a>
+        {% endif %}
+
+    </div>
+{% endblock %}
+
+{% block action_empty_list %}
+    {% if site.urls.create and  perm_create %}
+        <div class="border-bottom border-white opacity-20 mb-5"></div>
+        <a href="{{ site.urls.create }}" class="btn btn-primary font-weight-bolder">
+            <i class="fas fa-plus icon-sm"></i>
+            Crear nuevo
+        </a>
+    {% endif %}
+{% endblock %}

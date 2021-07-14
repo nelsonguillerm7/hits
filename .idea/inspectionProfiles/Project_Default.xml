@@ -1,0 +1,44 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="175" name="Python" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="6">
+            <item index="0" class="java.lang.String" itemvalue="reportlab" />
+            <item index="1" class="java.lang.String" itemvalue="six" />
+            <item index="2" class="java.lang.String" itemvalue="pillow" />
+            <item index="3" class="java.lang.String" itemvalue="typing-extensions" />
+            <item index="4" class="java.lang.String" itemvalue="pre-commit" />
+            <item index="5" class="java.lang.String" itemvalue="distlib" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyTypeCheckerInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="object.get_context_data" />
+          <option value="kwargs" />
+          <option value="apps.procedures.mixins.ProcedureBaseMixin.get_queryset" />
+          <option value="apps.procedures.mixins.ProcedureListMixin.request" />
+          <option value="apps.procedures.mixins.ProcedureFormMixin.*" />
+          <option value="apps.procedures.mixins.AssignmentOfProcedureUpdateMixin.*" />
+          <option value="apps.procedures.mixins.ProcedureBaseMixin.*" />
+          <option value="apps.procedures.mixins.ProcedureDetailMixin.*" />
+          <option value="apps.procedures.views.MixinDynamicForm.*" />
+          <option value="apps.procedures.views.ChangeStateViewMixin.*" />
+          <option value="apps.procedures.workflows.ProcedureWorkflow.*" />
+          <option value="apps.procedures.models.procedures.Procedure.*" />
+          <option value="apps.procedures.utils.classes.ChangeStateViewMixin.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

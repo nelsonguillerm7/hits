@@ -1,0 +1,19 @@
+{% extends 'base/base_detail.html' %}
+{% block detail_actions %}
+    {#    <a href="{{ site.urls.delete }}" class="btn btn-danger font-weight-bolder mr-2">#}
+    {#        <i class="fas fa-times icon-sm"></i>#}
+    {#        Eliminar#}
+    {#    </a>#}
+    {% if object.state == 1 %}
+        <a href="{% url 'hit:hits_update' object.pk %}" class="btn btn-primary font-weight-bolder mr-2">
+            <i class="fas fa-pen icon-sm"></i>
+            Update
+        </a>
+    {% endif %}
+    {% if perm_create %}
+        <a href="{{ site.urls.create }}" class="btn btn-primary font-weight-bolder mr-2">
+            <i class="fas fa-plus icon-sm"></i>
+            Create New
+        </a>
+    {% endif %}
+{% endblock %}

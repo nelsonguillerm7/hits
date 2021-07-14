@@ -1,0 +1,46 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+{% block form %}
+    <!--begin::Login Sign in form-->
+    <div class="card-body">
+        <div class="authent-logo">
+            <img src="{% static 'assets/images/logo@2x.png' %}" alt="">
+        </div>
+        <div class="authent-text">
+            <p>Welcome to SPY!</p>
+            <p>Please Sign-in to your account.</p>
+        </div>
+        <form class="form g-3 needs-validation" novalidate="" method="POST">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div class="mb-3">
+                <div class="form-floating">
+                    <input type="email" class="form-control invalid" id="floatingInput"
+                           placeholder="name@example.com" name="username">
+                    <label for="floatingInput">Email address</label>
+                    {% if form.username.errors %}
+                        <div class="invalid-feedback d-block">{{ form.username.errors }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword"
+                           placeholder="Password" name="password">
+                    <label for="floatingPassword">Password</label>
+                    {% if form.password.errors %}
+                        <div class="invalid-feedback d-block">{{ form.password.errors }}</div>
+                    {% endif %}
+
+                </div>
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-info m-b-xs">Sign In</button>
+            </div>
+        </form>
+        <div class="authent-reg">
+            <p>Not registered? <a href="{% url 'auth:register' %}">Create an account</a></p>
+        </div>
+    </div>
+    <!--end::Login Sign in form-->
+{% endblock %}

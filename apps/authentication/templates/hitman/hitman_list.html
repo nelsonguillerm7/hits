@@ -1,0 +1,18 @@
+{% extends "base/base_list.html" %}
+
+{% block actions %}
+    <div>
+        <a href='{% url "auth:hitman_detail" row.instance.pk %}'
+           class="btn btn-sm btn-clean btn-icon"
+           title="View detail">
+            <i class="fas fa-eye icon-md"></i>
+        </a>
+        {% if request.user.pk == 1 %}
+            <a href="{% url "auth:hitman_add_managers" row.instance.pk %}"
+               class="btn btn-sm btn-clean btn-icon"
+               title="Add hitmans group">
+                <i class="fas fa-user-plus icon-md"></i>
+            </a>
+        {% endif %}
+    </div>
+{% endblock %}

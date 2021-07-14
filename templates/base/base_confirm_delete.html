@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+<div class="alert alert-custom alert-light-danger mb-5" role="alert">
+  <div class="alert-icon"><i class="flaticon-warning"></i></div>
+  <div class="alert-text">
+    <h2>¿Este seguro de eliminar este registro?</h2>
+    <p>** Recuerde que esta acción puede afectar otras funciones del sistema. **</p>
+    <h4>Se eliminará el siguiente elemento: <span class="text-info font-weight-bolder">{{ object }}</span></h4>
+    <div class="mt-5">
+      <form action="" method="POST">
+        {% csrf_token %}
+        {% if site.urls.detail %}
+        <a href="{{ site.urls.detail }}" class="btn btn-primary">Cancelar</a>
+        {% endif %}
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

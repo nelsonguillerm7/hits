@@ -1,0 +1,10 @@
+"""Auth app."""
+
+from django.apps import AppConfig
+
+
+class AuthenticationAppConfig(AppConfig):
+    """Authentication app config."""
+
+    name = "apps.authentication"
+    verbose_name = "Autenticación"

@@ -1,0 +1,41 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+{% block css %}
+    {{ block.super }}
+    <style>
+        .error-list {
+            color: #f75d6fd8;
+            margin-top: .25rem;
+            font-size: .875em;
+        }
+    </style>
+{% endblock %}
+{% block form %}
+    <div class="card-body">
+        <div class="authent-logo">
+            <img src="{% static 'assets/images/logo@2x.png' %}" alt="">
+        </div>
+        <div class="authent-text">
+            <p>Welcome to SPY!</p>
+            <p>Enter your details to create your account</p>
+        </div>
+        <form class="form g-3 needs-validation" novalidate="" method="POST">
+            {% csrf_token %}
+            {% for field in form.hidden_fields %}
+                {{ field }}
+            {% endfor %}
+            {% for field in form.visible_fields %}
+                <label for="{{ field.id_for_label }}" class="mt-2">{{ field.label }}</label>
+                <div class="error-list">{{ field.errors }}</div>
+                {{ field }}
+                <div class="form-text">{{ field.help_text }}</div>
+            {% endfor %}
+            <div class="d-grid mt-3">
+                <button type="submit" class="btn btn-primary m-b-xs">Register</button>
+            </div>
+        </form>
+        <div class="authent-login">
+            <p>Already have an account? <a href="{% url 'auth:login' %}">Sign in</a></p>
+        </div>
+    </div>
+{% endblock %}
