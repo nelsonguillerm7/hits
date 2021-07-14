@@ -1,0 +1,14 @@
+.DS_Store
+=======
+.idea
+.vscode
+*.pyc
+*~
+*.sqlite3
+*.lock
+.env
+media/
+signatures/
+**/migrations/*
+!**/migrations/__init__.py
+temp/
