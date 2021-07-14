@@ -1,11 +1,5 @@
 {% extends "base/base_list.html" %}
 
-{% block list_actions %}
-    {{ block.super }}
-
-
-{% endblock %}
-
 {% block actions %}
     <div>
         <a href="{% url 'hit:hits_detail' row.instance.pk %}"
@@ -20,7 +14,6 @@
                 <i class="fas fa-pen icon-md"></i>
             </a>
         {% endif %}
-
     </div>
 {% endblock %}
 

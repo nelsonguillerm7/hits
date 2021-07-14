@@ -1,14 +1,16 @@
 # Create your views here.
+# Django Core
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseForbidden, JsonResponse
 from django.urls import reverse_lazy, reverse
 from django.views import View
 
+# Local apps
+from apps.authentication.models import User
 from apps.authentication.utils import check_big_boss, check_managers
 from apps.hit.forms import HitsForm
 from apps.hit.models import Hit
 from config.views import BaseListView, BaseDetailView, BaseCreateView, BaseUpdateView
-from apps.authentication.models import User
 
 
 class HitsUrlsMixin:

@@ -1,17 +1,13 @@
-# Django
+# Django core
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import Permission
 
-
-# Local
-
-
-# UserCreationForm
+# Local apps
 from apps.hit.models import Hit
 
 
 class HitsForm(forms.ModelForm):
+    """Class defina model the hits"""
+
     class Meta:
         model = Hit
         fields = (

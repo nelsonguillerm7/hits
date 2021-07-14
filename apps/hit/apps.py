@@ -5,4 +5,4 @@ class HitAppConfig(AppConfig):
     """Hit app config."""
 
     name = "apps.hit"
-    verbose_name = "Hit"
+    verbose_name = "Hits"
